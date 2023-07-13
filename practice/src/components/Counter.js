@@ -1,12 +1,16 @@
+import { useSelector } from 'react-redux';
 import './Counter.css'
 
 const Counter = () => {
+
+  const counter = useSelector(state => state.counter);
+
   const toggleCounterHandler = () => {};
 
   return (
     <main className='counter'>
       <h1>Redux Counter</h1>
-      <div className='value'>-- COUNTER VALUE --</div>
+      <div className='value'>{counter}</div>
       <button onClick={toggleCounterHandler}>Toggle Counter</button>
     </main>
   );
